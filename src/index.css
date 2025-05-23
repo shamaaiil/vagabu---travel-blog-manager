@@ -1,0 +1,17 @@
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 138, 138); /* Adjust the color to match the teelclrish tone */
+  border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* event calender css */
+
+.fc .fc-daygrid-day-frame {
+  cursor: pointer;
+}
+
