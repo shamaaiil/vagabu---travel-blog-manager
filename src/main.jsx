@@ -1,35 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "@material-tailwind/react";
-import { MaterialTailwindControllerProvider } from "@/context";
-import "../public/css/tailwind.css";
-import { Provider } from "react-redux";
-import { persistor, store } from "./store/store";
-import { PersistGate } from "redux-persist/integration/react";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';              // <-- Import Provider
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import store from './store';                         // <-- Import your redux store
+import App from './App';
+import { store } from './store/store';
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/firebase-messaging-sw.js")
-    .then((registration) => {})
-    .catch((err) => {
-      console.error("Service Worker registration failed:", err);
-    });
-}
+const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <ThemeProvider>
-          <MaterialTailwindControllerProvider>
-            <PersistGate loading={null} persistor={persistor}>
-              <App />
-            </PersistGate>
-          </MaterialTailwindControllerProvider>
-        </ThemeProvider>
-      </BrowserRouter>
+    <Provider store={store}>                        {/* Wrap in Redux Provider */}
+      <QueryClientProvider client={queryClient}>   {/* React Query Provider */}
+        <App />
+      </QueryClientProvider>
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

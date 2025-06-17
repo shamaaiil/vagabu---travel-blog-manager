@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const REACT_APP_API_URL = "http://192.168.1.51:8000/api/admin";
-// const REACT_APP_API_URL = "https://rush.codelab.pk/public/api/admin/";
+const REACT_APP_API_URL = "http://localhost:3000"
 const API_URL = REACT_APP_API_URL;
 
 // Function to handle blob file download

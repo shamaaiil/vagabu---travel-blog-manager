@@ -1,16 +1,13 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import authReducer from "../features/AuthSlice/authSlice";
 import { apiSlice } from "../services/apiService";
-import teamReducer from "../features/TeamSlice/teamSlice";
-import projectReducer from "../features/ProjectSlice/projectsSlice";
 
 // Combine reducers
 const rootReducer = combineReducers({
-  auth: authReducer,
-  team: teamReducer,
-  projects: projectReducer,
+//   auth: authReducer,
+//   team: teamReducer,
+//   projects: projectReducer,
 
   [apiSlice.reducerPath]: apiSlice.reducer,
 });

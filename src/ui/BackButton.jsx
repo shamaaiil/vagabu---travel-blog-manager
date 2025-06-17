@@ -8,7 +8,7 @@ const BackButton = ({ label = "Go Back", className = "" }) => {
     <button
       variant="outline"
       onClick={() => navigate(-1)}
-      className={`flex items-center gap-2 bg-teelclr px-4 py-2 m-2 rounded text-white ${className}`}
+      className={`flex items-center gap-2 bg-teelclr px-4 py-2 my-2 rounded text-blue ${className}`}
     >
       <ArrowLeft className="w-4 h-4" />
       {label}

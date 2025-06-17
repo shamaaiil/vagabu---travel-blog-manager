@@ -6,11 +6,16 @@ module.exports = withMT({
   theme: {
     extend: {
       colors: {
-        pinkclr: "#ff00a7", 
-        teelclr: "#03A7A7", 
-        orangeclr:"#FF7736",
-        textclr:"#2B3674"
-        
+       pastelgrey : "#D4C9BE",
+       grey : '#F1EFEC',
+       blue : '#123458',
+       black : '030303'
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
+         passionConflict: ['"Passion Conflict"', 'cursive'],
+          dancingScript: ['"Dancing Script"', 'cursive'],
       },
       borderColor: (theme) => ({
         custom: "rgb(176 190 197 / var(--tw-border-opacity))",

@@ -14,4 +14,7 @@
 .fc .fc-daygrid-day-frame {
   cursor: pointer;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
